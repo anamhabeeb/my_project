@@ -1,0 +1,71 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-image: /home/anam/Desktop("images.jpeg");
+}
+.group        { 
+  position:relative; 
+  margin-bottom:45px; 
+}
+input         {
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+</style>
+</head>
+<body>
+
+<h1>Login</h1>
+<form>
+    
+  <div class="group">      
+    <input type="text" required>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label>Email</label>
+  </div>
+    
+  <div class="group">      
+    <input type="text" required>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label>Password</label>
+  </div>
+    
+</form>
+
+</body>
+</html>-->
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Is anyone getting tired of repeatedly entering the header over and over?? -->
+        <title>Rango</title>
+    </head>
+
+    <body>
+        <h1>Login to Rango</h1>
+
+        <form id="login_form" method="post" action="/myapp/login/">
+            {% csrf_token %}
+             
+            Username: <input type="text" name="username" value="" size="50" />
+            <br />
+            Password: <input type="password" name="password" value="" size="50" />
+            <br />
+
+            <input type="submit" value="submit" />
+        </form>
+
+    </body>
+</html>

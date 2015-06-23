@@ -1,0 +1,95 @@
+<!--<!DOCTYPE html>
+<html>
+   
+
+
+
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+
+
+    	{% if registered %}
+        Rango says: <strong>thank you for registering!</strong>
+        <a href="/my_app/thankyou">
+        {% else %}
+        <strong>register here!</strong><br />
+
+        <form id="user_form" method="post" action="/my_app/register/"
+                enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+
+      
+      
+        <h1>Sign Up</h1>
+        
+        <fieldset>
+          <legend><span class="number">1</span>Your basic info</legend>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="username">
+          
+          <label for="email">Email:</label>
+          <input type="email" id="mail" name="email">
+          
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password">
+          
+          
+        
+        </fieldset>
+        <button type="submit">Sign Up</button>
+      </form>
+      
+    </body>
+</html>-->
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+        <h1>Register with Rango</h1>
+
+
+         <strong>register here!</strong><br />
+
+        
+         
+
+        <form id="user_form" method="post" action="/myapp/register/"
+                enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            <!-- Display each form. The as_p method wraps each element in a paragraph
+                 (<p>) element. This ensures each element appears on a new line,
+
+
+                 making everything look neater. -->
+
+                 
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+
+            <!-- Provide a button to click to submit the form. -->
+            <input type="submit" name="submit" value="Register" />
+        </form>
+        {% endif %}
+    </body>
+</html>
+
+
+<a href="/myapp/login/">Login</a>
